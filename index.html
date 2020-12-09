@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="timer">
+        <div class="time hour"></div>
+        <div class="time divider">:</div>
+        <div class="time minute"></div>
+        <div class="time divider">:</div>
+        <div class="time second"></div>
+    </div>
+
+    <div class="container">
+        <div class="confirm hide">
+            <div class="text">Are you sure to submit the test, the time still remain?</div>
+            <div class="menu-list">
+                <button class="btn continue" onclick="confirmSubmitTest(false)">Continue</button>
+                <button class="btn submit" id="confirm-submit" onclick="confirmSubmitTest(true)">Submit</button>
+            </div>
+        </div>
+        <div class="blur">
+            <div class="title"></div>
+            <button class="btn start" onclick="startTest()">Start</button>
+            <div class="duration"></div>
+        </div>
+        <div class="question" id="question-text"></div>
+            <div class="answer-list" id="answer-list">
+                <button class="answer answer-hover" onclick="chooseAnswer(0)"></button>
+                <button class="answer answer-hover" onclick="chooseAnswer(1)"></button>
+                <button class="answer answer-hover" onclick="chooseAnswer(2)"></button>
+                <button class="answer answer-hover" onclick="chooseAnswer(3)"></button>
+            </div>
+            <button class="btn prev" onclick="prevQuesion()">Previous</button>
+            <button class="btn next" onclick="nextQuesion()">Next</button>
+            <button class="btn submit" id="test-submit" onclick="submitPressed()">Submit</button>
+            <br>
+            <div id="score"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="run.js"></script>
+</body>
+
+</html>
